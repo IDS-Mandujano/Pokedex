@@ -1,3 +1,3 @@
-import { ListPockemons } from "../models/ListPokemons.js"
+import { ListPokemons } from "../models/ListPokemons.js"
 
-export const listPockemons = new ListPockemons()
+export let listPokemons = new ListPokemons()

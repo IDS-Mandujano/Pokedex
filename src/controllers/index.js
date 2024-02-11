@@ -1,42 +1,37 @@
-import { Pokemon } from "../models/Pokemon.js" 
-import { listPockemons } from "./dependencies.js"
+import { Pokemon } from "../models/Pokemon.js"
+import { listPokemons } from "./dependencies.js"
 
-let loadData = document.getElementById("loadData")
+const loadData = document.getElementById("loadData")
 loadData.addEventListener("click",()=>{
 
-    let apiUrl = "https://pokeapi.co/api/v2/pokemon"
-    fetch(apiUrl).then(
-        response => response.json()
+    let url = "https://pokeapi.co/api/v2/pokemon"
+    fetch(url)
+    .then( response => response.json() 
     ).then(
-
         data => {
+
             data.results.forEach(element => {
                 let pokemon = new Pokemon()
 
                 pokemon.setName(element.name)
-                listPockemons.addCharacter(pokemon)
-                
-                fetch(element.url).
-                then(response => response.json()).
-                then(element => console.log(element))
+
+                listPokemons.addListPokemons(pokemon)
             })
         })
 })
 
-let viewData = document.getElementById("viewData")
+const viewData = document.getElementById("viewData")
 viewData.addEventListener("click",()=>{
 
     const ul = document.getElementById("printData")
-    listPockemons.getCharacters().forEach(item => {
+    listPokemons.getListPokemons().forEach(item => {
 
-        let listCharacters = document.createElement("li")
-        let pokemonContainer = document.createElement("div")
+        let listName = document.createElement("li")
 
         let name = document.createElement("p")
         name.innerHTML = item.getName()
-        pokemonContainer.appendChild(name)
-
-        ul.appendChild(listCharacters)
+        listName.appendChild(name)
+        
+        ul.appendChild(listName)
     })
-
 })

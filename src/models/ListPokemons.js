@@ -1,13 +1,11 @@
-export class ListPockemons{
+export class ListPokemons{
+    #pokemons = []
 
-    #characters = []
-
-    addCharacter(character){
-        this.#characters.push(character)
+    addListPokemons(pokemon){
+        this.#pokemons.push(pokemon)
     }
 
-    getCharacters(){
-        return this.#characters
+    getListPokemons(){
+        return this.#pokemons
     }
-
 }
