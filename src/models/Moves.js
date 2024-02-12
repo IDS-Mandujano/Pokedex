@@ -1,4 +1,4 @@
-class Moves {
+export class Moves {
 
     #name
 
