@@ -93,10 +93,6 @@ viewData.addEventListener("click", () => {
             })
 
         })
-        /*pokemon.getMoves().forEach(move =>{
-            let nameMove = document.createElement("p")
-            nameMove.innerHTML = move.getName()
-        })*/
         divBtn.appendChild(viewAbilities)
         cardsContainer.appendChild(divBtn)
 
