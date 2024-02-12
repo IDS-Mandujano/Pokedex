@@ -4,7 +4,7 @@ export class LisDetails{
     #moves = []
     #sprites = []
 
-    addUnique(ability){
+    addAbilities(ability){
         this.#abilities.push(ability)
     }
     getAbilities(){
